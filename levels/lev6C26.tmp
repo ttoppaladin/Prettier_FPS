@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1yleqbb8tc7x"]
+[gd_scene load_steps=14 format=3 uid="uid://b1yleqbb8tc7x"]
 
 [ext_resource type="PackedScene" uid="uid://btv0a42cgxt8g" path="res://levels/WE_test.tscn" id="1_db21n"]
 [ext_resource type="Material" uid="uid://cn1gsy15bkaff" path="res://materials/grid.tres" id="2_x5xie"]
@@ -11,9 +11,6 @@ size = Vector3(20, 0.5, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oahyi"]
 data = PackedVector3Array(-10, 0.25, 10, 10, 0.25, 10, -10, -0.25, 10, 10, 0.25, 10, 10, -0.25, 10, -10, -0.25, 10, 10, 0.25, -10, -10, 0.25, -10, 10, -0.25, -10, -10, 0.25, -10, -10, -0.25, -10, 10, -0.25, -10, 10, 0.25, 10, 10, 0.25, -10, 10, -0.25, 10, 10, 0.25, -10, 10, -0.25, -10, 10, -0.25, 10, -10, 0.25, -10, -10, 0.25, 10, -10, -0.25, -10, -10, 0.25, 10, -10, -0.25, 10, -10, -0.25, -10, 10, 0.25, 10, -10, 0.25, 10, 10, 0.25, -10, -10, 0.25, 10, -10, 0.25, -10, 10, 0.25, -10, -10, -0.25, 10, 10, -0.25, 10, -10, -0.25, -10, 10, -0.25, 10, 10, -0.25, -10, -10, -0.25, -10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_baltr"]
-albedo_color = Color(1, 0.231373, 1, 1)
 
 [sub_resource type="Shader" id="Shader_cwof1"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.1.dev4's StandardMaterial3D.
@@ -135,18 +132,8 @@ mesh = SubResource("BoxMesh_gd0ev")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_oahyi")
 
-[node name="Floor2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.458238, 0, 0, 0, 1, 0, 0, 0, 0.330496, -3.87986, 1.89572, 5.81924)
-mesh = SubResource("BoxMesh_gd0ev")
-surface_material_override/0 = SubResource("StandardMaterial3D_baltr")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_oahyi")
-
 [node name="Box" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.60739, 0, 0, 0, 1, -0.99134, 2.63377, -4.99092)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -5)
 mesh = SubResource("BoxMesh_xc4gq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Box"]
@@ -166,3 +153,7 @@ shape = SubResource("ConcavePolygonShape3D_j6kcl")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_liofc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.178431, 0)
+walking_speed = null
+sprinting_speed = null
+couching_speed = null
+jump_velocity = null
